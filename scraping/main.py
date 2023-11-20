@@ -3,6 +3,7 @@ import scraping_methods
 
 url = "https://landvaluation.bm/"
 browser = scraping_methods.init_browser(url)
+print("initted")
 
 # download HTML files for each parish
 scraping_methods.get_parish_data(browser)

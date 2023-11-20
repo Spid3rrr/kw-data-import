@@ -6,21 +6,23 @@ import glob
 from datetime import datetime
 
 from splinter import Browser
+from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 import pandas as pd
 
 
 def init_browser(url):
     mycwd = os.getcwd()
-    # executable_path = {'executable_path' : mycwd + '/chrome-linux64/chrome'} # chromedriver_110'}
-    executable_path = {'executable_path' : mycwd + '/edgedriver_118'}
+    # executable_path = {'executable_path' : mycwd + '/chromedriver-linux64/chrome'} # chromedriver_110'}
+    # executable_path = {'executable_path' : mycwd + '/edgedriver_118'}
     # print(executable_path)
     # I did chmod +x the driver, works for version 106 of chrome
     # make sure to pip install splinter[selenium4]
     # so that selenium can drive the browser
     # browser = Browser('chrome', **executable_path)
-    browser = Browser('firefox') #  , **executable_path)
-
+    print('browser not initted')
+    browser = Browser('firefox')
+    print('browser initted')
     # Open Site
     browser.visit(url)
     browser.driver.maximize_window()  # full screen to view all menus
